@@ -1,5 +1,7 @@
-import React from "react";
-
 export const HomePage = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <h1>This is our game-app!</h1>
+    </div>
+  );
 };
