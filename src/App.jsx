@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { ErrorLogin } from "./components/ErrorLogin";
 import { GamePage } from "./pages/GamePage";
+import { ProfilePage } from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<ErrorLogin />} />
           <Route path="/game/:userId" element={<GamePage />} />
+          <Route path="/profile/:userId" element={<ProfilePage />} />
         </Routes>
       </Router>
     </>
