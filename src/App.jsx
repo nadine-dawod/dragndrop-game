@@ -1,17 +1,22 @@
 import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom";
-
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import routes from "./routes/routes";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
+import  ErrorLogin  from "./components/ErrorLogin";
+import { GamePage } from "./pages/GamePage";
+import { ProfilePage } from "./pages/ProfilePage";
+import Login from "./components/Login";
 
 function App() {
   return (
     <>
       <Router>
-        <Header />
-        {routes}
-        <Footer />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="*" element={<ErrorLogin />} />
+          <Route path="/game/:userId" element={<GamePage />} />
+          <Route path="/profile/:userId" element={<ProfilePage />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </Router>
     </>
   );
