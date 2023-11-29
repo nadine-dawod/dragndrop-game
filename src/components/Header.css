@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vh;
+  padding: 1rem;
+}
+.navBar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}

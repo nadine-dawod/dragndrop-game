@@ -7,6 +7,7 @@ export const GamePage = () => {
     <div>
 
 
+        <GameDnD />
         <DragDrop />
 
 

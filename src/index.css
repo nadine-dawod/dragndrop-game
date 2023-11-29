@@ -21,7 +21,7 @@
   align-items: center;
 }
 
-.item {
+.item, img {
   width: 40px;
   height: 40px;
 }
