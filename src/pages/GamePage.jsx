@@ -1,17 +1,15 @@
 import React from "react";
-import GameDnD from "../components/GameDnD";
 import { DragDrop } from "../components/dragDrop";
 
 export const GamePage = () => {
   return (
     <div>
 
+      <h2>GAME PAGE</h2>
 
-        <GameDnD />
         <DragDrop />
 
 
-        
     </div>
 
 

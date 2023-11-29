@@ -1,4 +1,4 @@
-import Items from "./Items";
+/* import Items from "../Items";
 import One from ".//buildingBlocks/One.svg";
 import Two from ".//buildingBlocks/Two.svg";
 import Three from ".//buildingBlocks/Three.svg";
@@ -30,4 +30,4 @@ const FunctionDnD = () => {
     )
 };
 
-export default FunctionDnD;
+export default FunctionDnD; */

@@ -1,4 +1,4 @@
-import {useDrag} from 'react-dnd';
+/* import {useDrag} from 'react-dnd';
 
 const Items = ({id, src}) => {
     const [{isDragging}, drag] = useDrag(() => ({
@@ -15,4 +15,4 @@ const Items = ({id, src}) => {
 
 }
 
-export default Items;
+export default Items; */

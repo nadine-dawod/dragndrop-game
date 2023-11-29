@@ -1,9 +1,11 @@
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
+
+import { Header } from './components/Header'
+import { Footer } from "./components/Footer";
 import { HomePage } from "./pages/HomePage";
-import { ErrorLogin } from "./components/ErrorLogin";
-import { GamePage } from "./pages/GamePage";
-import { ProfilePage } from "./pages/ProfilePage";
+import routes from './routes/routes';
+
 
 function App() {
   return (
@@ -11,9 +13,10 @@ function App() {
       <Router>
         <Header />
         {routes}
-        <GamePage />
         <Footer />
       </Router>
+
+
     </>
   );
 }

@@ -1,4 +1,4 @@
-import {DndProvider} from 'react-dnd';
+/* import {DndProvider} from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import FunctionDnD from './FunctionDnD';
 const GameDnD = () => {
@@ -16,4 +16,4 @@ const GameDnD = () => {
     )
 }
 
-export default GameDnD;
+export default GameDnD; */
