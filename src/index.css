@@ -1,9 +1,8 @@
 .game-area {
   display: flex;
-
 }
 
-.canvas-area {
+.dropArea {
   max-width: 500px;
   width: 100%;
   min-height: 500px;
@@ -11,7 +10,7 @@
   background-color: rgb(128, 128, 128, 0.5);
 }
 
-.element-area {
+.elementArea {
   max-width: 300px;
   width: 100%;
   min-height: 500px;
@@ -22,8 +21,11 @@
   align-items: center;
 }
 
-.element {
+.item {
   width: 40px;
-  background-color: brown;
   height: 40px;
+}
+
+.item:hover {
+  cursor: pointer;
 }

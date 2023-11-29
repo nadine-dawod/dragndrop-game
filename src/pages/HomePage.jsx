@@ -1,11 +1,11 @@
-import { DragDrop } from "../components/dragDrop";
+import { GamePage } from "./GamePage";
 
 export const HomePage = () => {
   return (
     <div>
-            <h2>Game Page</h2>
 
-            <DragDrop />
+      <GamePage />
+
     </div>
   );
 };
