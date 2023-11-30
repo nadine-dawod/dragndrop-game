@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { Header } from './components/Header'
 import { Footer } from "./components/Footer";
-import { HomePage } from "./pages/HomePage";
+import GamePage from "./pages/GamePage";
 import routes from './routes/routes';
 
 
@@ -13,6 +13,7 @@ function App() {
       <Router>
         <Header />
         {routes}
+        <GamePage />
         <Footer />
       </Router>
 

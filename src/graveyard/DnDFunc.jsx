@@ -1,13 +1,14 @@
 import React from "react";
 import "./DnDStyle.css";
+import PropTypes from 'prop-types';
 
 import One from "./buildingBlocks/One.svg";
 import Two from "./buildingBlocks/Two.svg";
 import Three from "./buildingBlocks/Three.svg"
 
 
-export const DragDrop = () => {
-   
+export const DnDFunc = () => {
+
     // FUNCTIONS FOR DROP AREA //
     const handleDragOver = (e) => {
         e.preventDefault();
@@ -29,18 +30,11 @@ export const DragDrop = () => {
     
     return (
         <div className="game-area">
-        
-        {/* DRAWING DROP AREA */}
-            <div 
-                className="dropArea" 
-                onDragOver={handleDragOver}
-                onDrop={handleDrop}>
-            </div>
+
+
+            {/* DRAWING DRAGGABLE ITEM */}
 
             <div className="elementArea">
-
-        {/* DRAWING DRAGGABLE ITEM */}
-
                 <img 
                     src={One}
                     className="item" 
@@ -64,10 +58,18 @@ export const DragDrop = () => {
                     onDragStart={handleDragStart}
                 >
                 </img>
+            </div>
 
-
+            {/* DRAWING DROP AREA */}
+                <div 
+                    className="dropArea" 
+                    onDragOver={handleDragOver}
+                    onDrop={handleDrop}>
                 </div>
 
-            </div>
+            
+
+
+        </div>
     )
-};
+}; 
