@@ -1,33 +1,28 @@
-.game-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+main {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.gameArea {
     background-color: rgba(228, 228, 231, 1);
     max-width: 1200px;
     width: 100%;
     min-height: 600px;
+    overflow: hidden;
+    position: relative;
   }
   
-/* .elementArea {
-  display: flex;
-
-}
-
-  .dropArea {
-    max-width: 250px;
-    width: 100%;
-    min-height: 250px;
-    height: 100%;
-    background-color: rgba(252, 252, 252, 1);
-  } */
-  
-
-  
-  .item, img {
+  .box {
     width: 40px;
     height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
   }
   
-  .item:hover {
+  .box:hover {
     cursor: pointer;
   }
