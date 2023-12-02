@@ -1,4 +1,90 @@
-// Hej hej hej - get started here
+
+// ==== REGISTER ACCOUNT ====
+import { useState } from "react";
+import axios from "axios";
+import Card from "./Card";
+import { useNavigate } from "react-router-dom";
+// +++++ Added const navigate on this page after seeing the Login tutorial.
+// Imported useNavigate to RegisterAccount
+// Also imported RegisterAccount and added Route to app.jsx.      
+
+
+const Register = () => {
+    // Three states - one for each input field
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    // check if the email is unique
+    const checkEmail = (users) => {
+        const user = users.find((user) => user.email === email);
+        if (user) return user;
+    };
+
+    // Assign this to button
+    const handleSubmit = async () => {
+        const user = await axios
+        .get("/users")
+        .then((res) => checkEmail(res.data, email));
+
+        // if email already exists
+        // else save this new user - by making a post-request
+        if(user) {
+            alert("User already exists!")
+        } else {
+            const user = {username, email, password};
+            axios.post("/users", user).then(alert("User created!"));
+            navigate("../ProfilePage");
+        }
+    };  
+
+    // added value to each state
+    // added onChange to be able to update the state (from input field)
+    // Also, added a handleSubmit to the button.
+    return (
+        <div className="container">
+            <Card>
+                <form className="form-container">
+                    <h1>Register User</h1>
+                    <label>
+                        <input 
+                            type="text" 
+                            placeholder="Name"                             
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                        />
+                    </label>
+                    <label>
+                        <input 
+                            type="text" 
+                            placeholder="Email" 
+                            value={email} 
+                            onChange={(e) => setEmail(e.target.value)} 
+                        />
+                    </label>
+                    <label>
+                        <input 
+                            type="password" 
+                            placeholder="Password" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)} 
+                        />
+                    </label>
+                    <button className="btn" type="submit" onClick={handleSubmit}>
+                        <p>Register Account</p>
+                    </button>
+                </form>
+            </Card>
+        </div>
+    );
+};
+
+export default Register;
+
+
+
+// ==== My train of thought bellow (befor starting to code) ====
 
 // This will be the Create Account page.
 // It will include:
@@ -36,4 +122,3 @@
 // 1. create a field for PASSWORD
 // 2. store the PW in the same object as the username and email.
 // 3. Error message: requirements? No requirements.
-
