@@ -1,10 +1,9 @@
-import React from "react";
-
+import Register from "../components/RegisterAccount";
 
 export const RegisterAccountPage = () => {
-    return (
-        <div>
-            <h1>Register Account</h1>
-        </div>
-    );
+  return (
+    <>
+      <Register />
+    </>
+  );
 };
