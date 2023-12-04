@@ -1,13 +1,17 @@
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 export const Header = () => {
   return (
     <div className="header">
       <div>
-        <h1>IMAGINARIUM</h1>
+        <NavLink to="/">
+          <h1>IMAGINARIUM</h1>
+        </NavLink>
       </div>
       <div className="navBar">
-        <button>Login</button>
-        <button>Create account</button>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/create-account">Create Account</NavLink>
+        <NavLink to="/about">About</NavLink>
       </div>
     </div>
   );
