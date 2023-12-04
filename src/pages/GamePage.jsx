@@ -1,7 +1,7 @@
 import DnMFunc from "../components/DnMFunc";
 
 
-const GamePage = () => {
+export const GamePage = () => {
   return <DnMFunc />
 }
-export default GamePage; 
+export default GamePage;

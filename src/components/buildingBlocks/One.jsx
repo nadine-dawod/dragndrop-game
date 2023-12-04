@@ -1,10 +1,10 @@
 import React from "react";
-import useDrag from "../useDrag";
+import useMove from "../useMove";
 
 
 const One = () => {
 
-    useDrag("One");
+    useMove("One");
 
 
     return (
@@ -15,8 +15,3 @@ const One = () => {
 };
 
 export default One;
-
-
-
-
-

@@ -1,10 +1,11 @@
 import React from "react";
-import useDrag from "../useDrag";
+import useMove from "../useMove";
+
 
 
 const Three = () => {
 
-    useDrag("Three");
+    useMove("Three");
 
 
     return (

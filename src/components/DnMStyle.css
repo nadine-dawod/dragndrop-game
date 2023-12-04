@@ -5,7 +5,7 @@ main {
   place-items: center;
 }
 
-.gameArea {
+#gameArea {
     background-color: rgba(228, 228, 231, 1);
     max-width: 1200px;
     width: 100%;

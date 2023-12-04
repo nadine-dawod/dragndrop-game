@@ -9,7 +9,7 @@ const DnMFunc = () => {
 
 return (
     <main>
-      <div className="gameArea"> 
+      <div id="gameArea"> 
 
       <One />
       <Two />

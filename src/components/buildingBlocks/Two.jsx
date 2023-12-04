@@ -1,10 +1,10 @@
 import React from "react";
-import useDrag from "../useDrag";
+import useMove from "../useMove";
 
 
 const Two = () => {
 
-    useDrag("Two");
+    useMove("Two");
 
     return (
         <svg id="Two" className="box" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
