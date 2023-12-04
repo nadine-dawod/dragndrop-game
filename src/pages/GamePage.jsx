@@ -9,5 +9,17 @@ import { Elementseven } from "./Elements/Elementseven";
 
 
 export const GamePage = () => {
-  return <div>GamePage</div>;
+  return <div>GamePage
+    <Elementone/>
+    <Elementtwo/>
+    <Elementthree/>
+    <Elementfour/>
+    <Elementfive/>
+    <Elementsix/>
+    <Elementseven/>
+  </div>;
 };
+
+
+
+
