@@ -1,7 +1,8 @@
 import { useState} from "react"; // uses the useState hook to add a variable to update the value.
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
 import  ErrorLogin  from "./ErrorLogin";
-// import axios from "axios";
+import axios from "axios";
+import "./Login.css";
 // import Card from "./Card";
 
 
@@ -62,14 +63,17 @@ const Login = () => {
     return( 
         <>
             {error && <ErrorLogin message={error} />}
-            <form onSubmit={(handleSubmit)}> 
-                <label htmlFor="userName">UserName</label>
-                <input value={username}  type="text" placeholder="UserName" id="userName" name="userName" onChange={(e) => setUsername(e.target.value)} /> 
-                <label htmlFor="password">password</label> 
-                <input value={password} type="password" placeholder="****" id="password" name="password" onChange={(e) => setPassword(e.target.value)} />
-                <button>Log In</button>
+            <form className="form-container" onSubmit={handleSubmit}>
+                <label htmlFor="Email"></label>
+                <input value={email}  type="text" placeholder="Email" id="Email" name="Email" onChange={(e) => setEmail(e.target.value)} /> 
+                <label htmlFor="password"></label> 
+                <input value={password} type="Password" placeholder="Password" id="Password" name="Password" onChange={(e) => setPassword(e.target.value)} />
             </form>
-            <button onClick={() => navigate("/register")}>Don't have an account? Register here.</button>
+            <div className="button-container">
+            <button onClick={() => navigate("/GamePage")}>Sign in</button>
+            <p>or</p>
+            <button onClick={() => navigate("/RegisterAccountPage")}>Create Account</button>
+            </div>
         </>
     ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page
 }; // Does our project require card functionality? We only have one user information that needs to be styled
