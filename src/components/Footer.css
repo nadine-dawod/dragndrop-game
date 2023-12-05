@@ -6,4 +6,11 @@
   align-items: center;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
+  color: #8B8989;
+  line-height: 25;
+  letter-spacing: 1%;
+}
+
+.heart {
+  color: #9CE5CA;
 }
