@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './Login.css';
 
 export const ErrorLogin = ({ message }) => {
   const navigate = useNavigate();
@@ -13,12 +14,12 @@ export const ErrorLogin = ({ message }) => {
   };
 
   return (
-    <div>
+    <div className="error-container" >
       <p>
         <span style={{ color: "red" }}>{message}</span>
       </p>
-      <button onClick={() => navigate("/login")}>Back to Login </button>
-      <button onClick={() => navigate("/register")}>
+      <button className="btn" onClick={() => navigate("/login")}>Back to Login </button>
+      <button className="btn" onClick={() => navigate("/register")}>
         Don't have an account? Register here.
       </button>
     </div>
