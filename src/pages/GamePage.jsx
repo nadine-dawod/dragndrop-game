@@ -7,10 +7,12 @@ import { Elementfive } from "../components/Elements/Elementfive";
 import { Elementsix } from "../components/Elements/Elementsix";
 import { Elementseven } from "../components/Elements/Elementseven";
 import { DropArea } from "../components/DropArea";
+import Register from "../components/RegisterAccount";
+import { Instructions } from "../components/Instructions";
 
 
 export const GamePage = () => {
-  return <div>GamePage
+  return <div>
     <Elementone/>
     <Elementtwo/>
     <Elementthree/>
@@ -18,6 +20,7 @@ export const GamePage = () => {
     <Elementfive/>
     <Elementsix/>
     <Elementseven/>
+    <Instructions/>
     <DropArea/>
   </div>;
 };

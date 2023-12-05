@@ -5,7 +5,7 @@ export const Header = () => {
     <div className="header">
       <div>
         <NavLink to="/">
-          <h1>IMAGINARIUM</h1>
+          <h1 className="logo">IMAGINARIUM</h1>
         </NavLink>
       </div>
       <div className="navBar">
