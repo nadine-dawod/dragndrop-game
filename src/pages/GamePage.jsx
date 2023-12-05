@@ -1,11 +1,11 @@
 import React from "react";
-import { Elementone } from "./Elements/Elementone";
-import { Elementtwo } from "./Elements/Elementtwo";
-import { Elementthree } from "./Elements/Elementthree";
-import { Elementfour } from "./Elements/Elementfour";
-import { Elementfive } from "./Elements/Elementfive";
-import { Elementsix } from "./Elements/Elementsix";
-import { Elementseven } from "./Elements/Elementseven";
+import { Elementone } from "../components/Elements/Elementone";
+import { Elementtwo } from "../components/Elements/Elementtwo";
+import { Elementthree } from "../components/Elements/Elementthree";
+import { Elementfour } from "../components/Elements/Elementfour";
+import { Elementfive } from "../components/Elements/Elementfive";
+import { Elementsix } from "../components/Elements/Elementsix";
+import { Elementseven } from "../components/Elements/Elementseven";
 
 
 export const GamePage = () => {
