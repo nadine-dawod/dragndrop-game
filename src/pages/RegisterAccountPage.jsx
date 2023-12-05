@@ -1,4 +1,4 @@
-import Register from "../components/RegisterAccount";
+import Register from "../components/Register";
 
 export const RegisterAccountPage = () => {
   return (
