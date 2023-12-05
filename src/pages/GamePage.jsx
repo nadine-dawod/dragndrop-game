@@ -6,6 +6,7 @@ import { Elementfour } from "../components/Elements/Elementfour";
 import { Elementfive } from "../components/Elements/Elementfive";
 import { Elementsix } from "../components/Elements/Elementsix";
 import { Elementseven } from "../components/Elements/Elementseven";
+import { DropArea } from "../components/DropArea";
 
 
 export const GamePage = () => {
@@ -17,6 +18,7 @@ export const GamePage = () => {
     <Elementfive/>
     <Elementsix/>
     <Elementseven/>
+    <DropArea/>
   </div>;
 };
 

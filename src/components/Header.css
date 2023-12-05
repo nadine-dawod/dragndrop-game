@@ -6,9 +6,12 @@
   width: 100vh;
   padding: 1rem;
   font-family: 'Lato', sans-serif;
+
 }
 .navBar {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 5px;
 }
+
+
