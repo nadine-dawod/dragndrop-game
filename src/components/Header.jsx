@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
+import { ProfileIcon } from "../components/Images/ProfileIcon";
 import "./Header.css";
+
 export const Header = () => {
   return (
     <div className="header">
@@ -12,6 +14,7 @@ export const Header = () => {
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/create-account">Create Account</NavLink>
         <NavLink to="/about">About</NavLink>
+        <ProfileIcon/>
       </div>
     </div>
   );
