@@ -1,16 +1,15 @@
 .footer {
   display: flex;
-  min-height: 100px;
   width: 80vp;
   justify-content: center;
   align-items: center;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: #8B8989;
-  line-height: 25;
+  line-height: 5;
   letter-spacing: 1%;
 }
 
-.heart {
+span {
   color: #9CE5CA;
 }
