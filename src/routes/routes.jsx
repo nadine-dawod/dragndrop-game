@@ -2,10 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import GamePage from "../pages/GamePage";
 import { ProfilePage } from "../pages/ProfilePage";
-import { ErrorLogin } from "../components/ErrorLogin";
+import ErrorLogin from "../components/ErrorLogin";
 import { AboutPage } from "../pages/AboutPage";
 import Login from "../components/Login";
-import Register from "../components/RegisterAccount";
+import Register from "../components/Register";
 
 const routes = (
   <Routes>

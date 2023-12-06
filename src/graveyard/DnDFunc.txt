@@ -6,7 +6,6 @@ import One from "./buildingBlocks/One.svg";
 import Two from "./buildingBlocks/Two.svg";
 import Three from "./buildingBlocks/Three.svg"
 
-
 export const DnDFunc = () => {
 
     // FUNCTIONS FOR DROP AREA //

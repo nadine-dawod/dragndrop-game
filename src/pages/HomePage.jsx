@@ -2,6 +2,10 @@ import GamePage from "./GamePage"
 
 
 export const HomePage = () => {
-  return <div></div>
+  return (
+    <div>
+      <GamePage />
+    </div>
+  );
 };
 export default HomePage;

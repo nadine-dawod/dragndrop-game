@@ -1,8 +1,9 @@
 import { useState} from "react"; // uses the useState hook to add a variable to update the value.
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
 import  ErrorLogin  from "./ErrorLogin";
-/* import axios from "axios"; */
-/* import Card from "./Card"; */
+import axios from "axios";
+import "./Login.css";
+// import Card from "./Card";
 
 
 const Login = () => {
@@ -62,34 +63,18 @@ const Login = () => {
     return( 
         <>
             {error && <ErrorLogin message={error} />}
-            <div className="container">
-                <Card>  
-                    <form className="form-container" >
-                        <h1>Log in</h1>
-                        <label>
-                            <input 
-                                type="text" 
-                                placeholder="Email" 
-                                value={email} 
-                                onChange={(e) => setEmail(e.target.value)} 
-                            />
-                        </label>
-                        <label>
-                            <input 
-                                type="password" 
-                                placeholder="Password" 
-                                value={password} 
-                                onChange={(e) => setPassword(e.target.value)} 
-                            />
-                        </label>
-                        <button className="btn" type="submit" onClick={handleSubmit}>
-                            <p>Log in</p>
-                        </button>
-                    </form>
-                </Card>
+            <form className="form-container" onSubmit={handleSubmit}>
+                <label htmlFor="Email"></label>
+                <input value={email}  type="text" placeholder="Email" id="Email" name="Email" onChange={(e) => setEmail(e.target.value)} /> 
+                <label htmlFor="password"></label> 
+                <input value={password} type="Password" placeholder="Password" id="Password" name="Password" onChange={(e) => setPassword(e.target.value)} />
+            </form>
+            <div className="button-container">
+            <button onClick={() => navigate("/GamePage")}>Sign in</button>
+            <p>or</p>
+            <button onClick={() => navigate("/RegisterAccountPage")}>Create Account</button>
             </div>
         </>
     ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page
-};
-
+}; // Does our project require card functionality? We only have one user information that needs to be styled
 export default Login;
