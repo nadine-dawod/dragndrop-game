@@ -9,10 +9,10 @@ import { Elementfive } from "../components/Elements/Elementfive";
 import { Elementsix } from "../components/Elements/Elementsix";
 import { Elementseven } from "../components/Elements/Elementseven";
 
-export const Draggable = ({children}) => {
+export const Draggable = (props) => {
 
     const {attributes, listeners, setNodeRef,  transform} = useDraggable({
-        id: props.id,
+        id: 'draggable',
     });
 
     const style = transform ? {
@@ -20,10 +20,9 @@ export const Draggable = ({children}) => {
     } : undefined;
 
     return (
-        <button ref={setNodeRef} style={style} {...listeners} {...attributes}>
-            {children}
-      </button>
-
+        <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
+            {props.children}
+        </div>
     );
 }
 
