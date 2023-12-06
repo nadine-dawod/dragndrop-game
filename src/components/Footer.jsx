@@ -3,8 +3,8 @@ import "./Footer.css";
 export const Footer = () => {
   return (
     <div className="footer">
-      <p>Made with <span>❤️</span> in Sweden by Maria Persson + Mo Wei Wu + 
-Nadine Kinora Dawod + Diana Undén + Saskia van der Zanden - GitHub</p>
+      <p>Made with ❤️ in Sweden by Maria Persson + Mo Wei Wu + 
+        Nadine Dawod + Diana Undén + Saskia van der Zanden - GitHub</p>
     </div>
   );
 };

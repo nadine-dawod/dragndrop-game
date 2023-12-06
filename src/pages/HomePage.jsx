@@ -1,4 +1,5 @@
-import { GamePage } from "./GamePage";
+import GamePage from "./GamePage"
+
 
 export const HomePage = () => {
   return (
@@ -7,3 +8,4 @@ export const HomePage = () => {
     </div>
   );
 };
+export default HomePage;
