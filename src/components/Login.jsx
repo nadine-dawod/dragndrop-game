@@ -1,7 +1,6 @@
 import { useState} from "react"; // uses the useState hook to add a variable to update the value.
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
 import  ErrorLogin  from "./ErrorLogin";
-
 import "./Login.css";
 import axios from "axios";
 // import Card from "./Card";
@@ -30,7 +29,6 @@ const Login = () => {
             return;
         }
 
-    
         try {  //checking if the login credentials are valid
             const response = await axios.get("/users");
             const user = checkUser(response.data);
@@ -38,11 +36,9 @@ const Login = () => {
             if (user) {
                 successMessage(user);
             } else {
+                console.error(error);
                 errorMessage("Invalid username or password. Please try again!");
             }
-        } catch (error) {
-            console.error(error);
-            errorMessage("An error occurred. Please try again later.");
         }
     };
     
@@ -58,8 +54,7 @@ const Login = () => {
 
     const errorMessage = (message) => {
         setError(message) //save error message
-        navigate(`/register`); // lead to register once error happened
-        
+
     };
 
     return( 
