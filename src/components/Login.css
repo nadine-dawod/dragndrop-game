@@ -1,28 +1,58 @@
-.form-container .error-container{
+.Login, .ErrorLogin{
+    background-color: rgb(240, 203, 210);
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.form-container{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-label{
-    text-align: left;
-    padding: 0.25rem 0;
+.button-container{
+    display: flex;
+    flex-direction: row;
 }
 
-input{
+input {
+    text-align: left;
+    padding: 0.7rem 0;
     margin: 0.5rem 0;
+    border-radius: 8px;
+    width: 300px;
+    border: 1px solid lightgray;
+    padding-left: 5px; 
+}
+
+::placeholder {
+    color: black;
+    font-size: 14px;
+}
+
+.button-container{
+    min-width: 250px;
+    margin-top: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
 }
 
 button{
-    border: none;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    background: none;
+    border-radius: 8px;
     cursor: pointer;
+    background-color: white;
+    min-width: 80px;
+    max-height: 40px;
+    transition: background-color 0.3s;
+    border: 1.5px solid lightgray; 
+    font-weight: bold;
 }
 
-.btn{
-    background: none;
+button:hover {
+    background-color: rgb(39, 39, 238);
     color: white;
-    text-decoration: underline;
 }
