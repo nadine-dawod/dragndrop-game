@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { ProfileIcon } from "../components/Images/ProfileIcon";
 import "./Header.css";
 import { LogOutButton } from "./LogOutButton";
+import ProfilePhoto from '../components/Images/ProfilePhoto.png';
 
 export const Header = () => {
   return (
@@ -16,7 +16,7 @@ export const Header = () => {
         <NavLink to="/create-account">Create Account</NavLink>
         <NavLink to="/about">About</NavLink>
         <LogOutButton/>
-        <ProfileIcon/>
+        <img src={ProfilePhoto} alt="Profile Picture"/>
       </div>
     </div>
   );
