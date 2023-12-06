@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"; //to allow users to access diffe
 import  ErrorLogin  from "./ErrorLogin";
 //import axios from "axios";
 import "./Login.css";
+import axios from "axios";
 // import Card from "./Card";
 
 
@@ -13,22 +14,23 @@ const Login = () => {
     const navigate = useNavigate();
 
     const checkUser = (users) => {  // Function to validate the user
-        return users.find(
-            (user) => user.email === email && user.password === password
-        );
+        const user = users.find(
+            (user) =>user.email === email && user.password === password);
+            console.log(user)
+            if (user.email === email && user.password === password)
+        return user;
     };
 
-    const handleSubmit = async (event) => {   
-        event.preventDefault(); // prevent the default behavior of a form when it is submitted.
+    const handleSubmit = async (e) => {   
+        e.preventDefault(); // prevent the default behavior of a form when it is submitted.
     
-        /*const validUsername = "Eva"; 
-        const validPassword = "9432";*/  // leave it to ask Helena should we need to do hard core here
-        
+  
         if (email === "" || password === "" ){  // Ensure email and password are not empty. || equal or
             alert("All fields are required!");
             return;
         }
 
+    
         try {  //checking if the login credentials are valid
             const response = await axios.get("/users");
             const user = checkUser(response.data);
@@ -44,7 +46,6 @@ const Login = () => {
         }
     };
     
-    
     const successMessage = (user) => {
         alert(`Hi ${user.username}` );
         navigate(`/game/${user.id}`); //  access to the user's game page after login
@@ -57,6 +58,7 @@ const Login = () => {
 
     const errorMessage = (message) => {
         setError(message) //save error message
+        navigate(`/register`); // lead to register once error happened
         
     };
 
@@ -64,15 +66,28 @@ const Login = () => {
         <>
             {error && <ErrorLogin message={error} />}
             <form className="form-container" onSubmit={handleSubmit}>
-                <label htmlFor="Email"></label>
-                <input value={email}  type="text" placeholder="Email" id="Email" name="Email" onChange={(e) => setEmail(e.target.value)} /> 
-                <label htmlFor="password"></label> 
-                <input value={password} type="Password" placeholder="Password" id="Password" name="Password" onChange={(e) => setPassword(e.target.value)} />
+                <h1>Log in</h1>
+                <label>
+                    <input 
+                        value={email}  
+                        type="text" 
+                        placeholder="Email" 
+                        onChange={(e) => setEmail(e.target.value)} 
+                    /> 
+                </label>
+                <label >
+                    <input 
+                        value={password} 
+                        type="Password" 
+                        placeholder="Password" 
+                        onChange={(e) => setPassword(e.target.value)} 
+                    />
+                </label> 
             </form>
             <div className="button-container">
-            <button onClick={() => navigate("/GamePage")}>Sign in</button>
-            <p>or</p>
-            <button onClick={() => navigate("/RegisterAccountPage")}>Create Account</button>
+                <button onClick={(handleSubmit)}>Log in</button>
+                <p>or</p>
+                <button onClick={() => navigate("/RegisterAccountPage")}>Create Account</button>
             </div>
         </>
     ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page
