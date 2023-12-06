@@ -15,7 +15,6 @@ function App() {
       <Router>
         <Header />
         {routes}
-        <GamePage />
         <Footer />
       </Router>
     </>
