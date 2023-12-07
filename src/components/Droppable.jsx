@@ -13,40 +13,13 @@ import { Elementseven } from "../components/Elements/Elementseven";
 
 export const Droppable = (props) => {
 
-    const {setNodeRef} = useDroppable({id: 'unique-id'});
+    const {setNodeRef} = 
+    useDroppable({id: 'droppable'});
 
     return (
-
-        <>
-
         <div ref={setNodeRef}>
-            <Elementone > </Elementone>
+            <Elementone />
         </div>
-
-        <div ref={setNodeRef}>
-            <Elementtwo > </Elementtwo>
-        </div>
-
-        <div ref={setNodeRef}>
-            <Elementthree > </Elementthree>
-        </div>
-
-        <div ref={setNodeRef}>
-        <Elementfour > </Elementfour>
-        </div>
-
-        <div ref={setNodeRef}>
-            <Elementfive> </Elementfive>
-        </div>
-
-        <div ref={setNodeRef}>
-            <Elementsix > </Elementsix>
-        </div>
-
-        <div ref={setNodeRef}>
-            <Elementseven > </Elementseven>
-        </div>
-    </>
     );
 };
 
