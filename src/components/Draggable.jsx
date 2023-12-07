@@ -11,18 +11,28 @@ import { Elementseven } from "../components/Elements/Elementseven";
 
 export const Draggable = (props) => {
 
-    const {attributes, listeners, setNodeRef,  transform} = useDraggable({
+    const {attribute, listeners, setNodeRef, transform} = useDraggable({
         id: 'draggable',
     });
+
+    const {Two} = useDraggable({
+        id: 'draggable'
+    })
 
     const style = transform ? {
         transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
     } : undefined;
 
     return (
+    <div>
         <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
-            {props.children}
+            <Elementone />
         </div>
+
+        <div ref={Two} style={style} {...listeners} {...attributes}>
+            <Elementtwo />
+        </div>
+    </div>
     );
 }
 

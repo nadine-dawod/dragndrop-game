@@ -13,12 +13,12 @@ import { Elementseven } from "../components/Elements/Elementseven";
 
 export const Droppable = (props) => {
 
-    const {One, Two, Three, Four, Five, Six, Seven} = 
+    const {setNodeRef} = 
     useDroppable({id: 'droppable'});
 
     return (
-        <div>
-            {props.children}
+        <div ref={setNodeRef}>
+            <Elementone />
         </div>
     );
 };
