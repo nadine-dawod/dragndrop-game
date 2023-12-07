@@ -16,6 +16,8 @@ function App() {
       <Router>
         <Header />
         {routes}
+          <Route path="/login" element={<Login />}/>
+          <Route path="/errorlogin" element={<ErrorLogin />}/>
         <Footer />
       </Router>
     </>
