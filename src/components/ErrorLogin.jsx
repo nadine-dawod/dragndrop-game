@@ -1,4 +1,6 @@
-import { useNavigate } from "react-router-dom";
+//I just realized the component might be not necessary, but I will keep it for a while
+
+/*import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 
@@ -26,4 +28,4 @@ const ErrorLogin = ({ message }) => { //funcrion to handle the error login
   ); 
 };
 
-export default ErrorLogin;
+export default ErrorLogin;*/
