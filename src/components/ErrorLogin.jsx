@@ -1,11 +1,13 @@
-import { useNavigate } from "react-router-dom";
+//I just realized the component might be not necessary, but I will keep it for a while
+
+/*import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 
-export const ErrorLogin = ({ message }) => {
+const ErrorLogin = ({ message }) => { //funcrion to handle the error login
   const navigate = useNavigate();
 
-  const backToLogin = () => {
+  const backToLogin = () => {    //I doubt whether the code in lines 8 to 14 is necessary
     navigate("/login");
   };
 
@@ -13,17 +15,17 @@ export const ErrorLogin = ({ message }) => {
     navigate("/register");
   };
 
-  return (
+  return (   //to let users return to the login or register page.
     <div className="error-container" >
       <p>
-        <span style={{ color: "red" }}>{message}</span>
-      </p>
-      <button onClick={() => navigate("/login")}>Back to Login </button>
+        <span style={{ color: "red" }}>{message}</span>  
+      </p>   
+      <button onClick={() => navigate("/login")}>Back to Login </button>  
       <button onClick={() => navigate("/register")}>
         Create Account
-      </button>
+      </button>  
     </div>
-  );
+  ); 
 };
 
-export default ErrorLogin;
+export default ErrorLogin;*/
