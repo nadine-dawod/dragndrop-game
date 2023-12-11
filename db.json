@@ -29,6 +29,12 @@
       "email": "baba@gmail.com",
       "password": "1234",
       "id": 5
+    },
+    {
+      "username": "Diana",
+      "email": "diana.unden@gmail.com",
+      "password": "hejsan",
+      "id": 6
     }
   ]
 }

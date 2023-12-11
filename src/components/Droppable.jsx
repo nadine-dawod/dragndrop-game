@@ -1,22 +1,9 @@
+import { useDroppable } from "@dnd-kit/core";
 
-import React from "react";
+export const Droppable = () => {
+  const { setNodeRef } = useDroppable({ id: "droppable" });
 
-import {useDroppable} from "@dnd-kit/core";
-
-
-
-export const Droppable = (props) => {
-
-    const {setNodeRef} = 
-    useDroppable({id: 'droppable'});
-
-    return (
-        <div ref={setNodeRef}>
-
-        </div>
-    );
+  return <div ref={setNodeRef}></div>;
 };
 
 export default Droppable;
-
-

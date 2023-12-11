@@ -4,7 +4,6 @@ export const RegisterAccountPage = () => {
   return (
     <>
       <Register />
-      <Card />
     </>
   );
 };
