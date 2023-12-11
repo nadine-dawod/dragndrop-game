@@ -1,0 +1,7 @@
+.ProfileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    width: 100%;
+}

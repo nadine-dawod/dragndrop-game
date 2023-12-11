@@ -15,8 +15,8 @@ export const Header = () => {
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/create-account">Create Account</NavLink>
         <NavLink to="/about">About</NavLink>
-        <LogOutButton/>
-        <img src={ProfilePhoto} alt="Profile Picture"/>
+        <NavLink to="/login"><LogOutButton/></NavLink>
+        <NavLink to="/profile/:userId"><img src={ProfilePhoto} alt="Profile Picture"/></NavLink>
       </div>
     </div>
   );
