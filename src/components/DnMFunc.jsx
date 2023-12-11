@@ -4,7 +4,6 @@ import { DndContext } from "@dnd-kit/core";
 import Draggable from "./Draggable";
 import Droppable from "./Droppable";
 
-
 import { Elementone } from "./Elements/Elementone";
 import { Elementtwo } from "./Elements/Elementtwo";
 import { Elementthree } from "./Elements/Elementthree";
@@ -18,6 +17,8 @@ export const DnMFunc = () => {
   return (
 
     <DndContext>
+      <div style={{display: "flex",
+                  justifyContent: "space-evenly"}}>
       <Elementone />
       <Elementtwo />
       <Elementthree />
@@ -25,6 +26,7 @@ export const DnMFunc = () => {
       <Elementfive />
       <Elementsix />
       <Elementseven />
+      </div>
     </DndContext>
 
   );

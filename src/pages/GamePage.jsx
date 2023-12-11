@@ -7,12 +7,13 @@ import { DnMFunc } from "../components/DnMFunc";
 
 
 export const GamePage = () => {
-  return <div>
+  return ( 
+  <div style={{marginTop: "25px"}}>
     <DnMFunc />
     <Instructions/>
     <DropArea/>
-  </div>;
-};
+  </div>
+)};
 
 export default GamePage;
 
