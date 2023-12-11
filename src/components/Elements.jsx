@@ -1,3 +1,6 @@
+/* I dont think this is used? /Nadine */
+
+
 import { Elementone } from "../components/Elements/Elementone";
 import { Elementtwo } from "../components/Elements/Elementtwo";
 import { Elementthree } from "../components/Elements/Elementthree";
