@@ -9,7 +9,6 @@ export const Elementone = () => {
     });
 
     const {Nr1} = useDroppable({
-        id: "One",
     });
 
     const style = transform ? {

@@ -5,15 +5,13 @@ import {useDroppable} from "@dnd-kit/core";
 
 
 
-export const Droppable = (props) => {
+export const Droppable = () => {
 
     const {setNodeRef} = 
     useDroppable({id: 'droppable'});
 
     return (
-        <div ref={setNodeRef}>
-
-        </div>
+        <div ref={setNodeRef}></div>
     );
 };
 
