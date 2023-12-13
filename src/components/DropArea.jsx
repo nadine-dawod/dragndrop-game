@@ -1,10 +1,14 @@
 import "./DropArea.css";
 import { useDroppable } from "@dnd-kit/core";
 
-export const DropArea = () => {
+export const DropArea = ({ children, id }) => {
   const { setNodeRef } = useDroppable({
-    id: "droppable",
+    id: id,
   });
 
-  return <div className="dropArea" ref={setNodeRef}></div>;
+  return (
+    <div className="dropArea" ref={setNodeRef}>
+      {children}
+    </div>
+  );
 };

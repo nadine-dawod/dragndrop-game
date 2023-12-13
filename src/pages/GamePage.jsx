@@ -5,17 +5,13 @@ import { Instructions } from "../components/Instructions";
 import { Elements } from "../components/Elements";
 import { DnMFunc } from "../components/DnMFunc";
 
-
 export const GamePage = () => {
-  return ( 
-  <div style={{marginTop: "25px"}}>
-    <DnMFunc />
-    <Instructions/>
-    <DropArea/>
-  </div>
-)};
+  return (
+    <div style={{ marginTop: "25px" }}>
+      <DnMFunc />
+      <Instructions />
+    </div>
+  );
+};
 
 export default GamePage;
-
-
-

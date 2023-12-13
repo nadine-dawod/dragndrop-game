@@ -1,8 +1,8 @@
 import { useDraggable } from "@dnd-kit/core";
 
-export const Draggable = () => {
+export const Draggable = ({ children, id }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: "draggable",
+    id: id,
   });
 
   const style = transform
@@ -12,8 +12,8 @@ export const Draggable = () => {
     : undefined;
 
   return (
-    <div ref={setNodeRef} style={style} {...listeners} {...attributes}></div>
+    <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
+      {children}
+    </div>
   );
 };
-
-export default Draggable;
