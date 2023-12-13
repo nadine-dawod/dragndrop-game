@@ -20,6 +20,12 @@ export const DnMFunc = () => {
     </Draggable>
   );
 
+  const draggableMarkupTwo = (
+    <Draggable id="draggable">
+    <Elementtwo />
+  </Draggable>
+  )
+
   function handleDragEnd(event) {
     const { over } = event;
 
@@ -29,16 +35,27 @@ export const DnMFunc = () => {
   }
 
   return (
+    <>    
+
     <DndContext onDragEnd={handleDragEnd}>
-      {parent === null ? draggableMarkup : null}
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        {containers.map((id) => (
+      {parent === null ? draggableMarkupTwo : null}
+      {containers.map((id) => (
           <DropArea key={id} id={id}>
-            {parent === id ? draggableMarkup : "Drop here"}
+        {parent === id ? draggableMarkupTwo : null}
           </DropArea>
         ))}
-      </div>
     </DndContext>
+    
+    <DndContext onDragEnd={handleDragEnd}>
+      {parent === null ? draggableMarkup : null}
+       {containers.map((id) => (
+          <DropArea key={id} id={id}>
+        {parent === id ? draggableMarkup : null}
+          </DropArea>
+        ))}
+    </DndContext>
+
+</>
   );
 };
 

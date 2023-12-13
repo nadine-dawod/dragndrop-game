@@ -8,8 +8,10 @@ import { DnMFunc } from "../components/DnMFunc";
 export const GamePage = () => {
   return (
     <div style={{ marginTop: "25px" }}>
+
+      <Instructions />    
       <DnMFunc />
-      <Instructions />
+
     </div>
   );
 };
