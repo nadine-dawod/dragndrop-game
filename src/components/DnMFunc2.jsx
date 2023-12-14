@@ -10,15 +10,15 @@ import { Elementseven } from "./Elements/Elementseven";
 import { Draggable } from "./Draggable";
 import { DropArea } from "./DropArea";
 
-export const DnMFunc = () => {
+export const DnMFunc2 = () => {
   const containers = ["A"];
   const [parent, setParent] = useState(null);
 
-  const draggableMarkup = (
-    <Draggable id="draggable">
-      <Elementone />
-    </Draggable>
-  );
+  const draggableMarkupTwo = (
+  <Draggable id="draggable">
+    <Elementtwo />
+  </Draggable>
+  )
 
   function handleDragEnd(event) {
     const { over } = event;
@@ -29,15 +29,16 @@ export const DnMFunc = () => {
   }
 
   return (
+    
     <DndContext onDragEnd={handleDragEnd}>
-      {parent === null ? draggableMarkup : null}
+      {parent === null ? draggableMarkupTwo : null}
       {containers.map((id) => (
           <DropArea key={id} id={id}>
-        {parent === id ? draggableMarkup : null}
+        {parent === id ? draggableMarkupTwo : null}
           </DropArea>
         ))}
     </DndContext>
   );
 };
 
-export default DnMFunc;
+export default DnMFunc2;

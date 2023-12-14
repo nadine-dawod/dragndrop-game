@@ -4,6 +4,7 @@ import Register from "../components/Register";
 import { Instructions } from "../components/Instructions";
 import { Elements } from "../components/Elements";
 import { DnMFunc } from "../components/DnMFunc";
+import { DnMFunc2 } from "../components/DnMFunc2"
 
 export const GamePage = () => {
   return (
@@ -11,6 +12,8 @@ export const GamePage = () => {
 
       <Instructions />    
       <DnMFunc />
+      <DnMFunc2 />
+
 
     </div>
   );
