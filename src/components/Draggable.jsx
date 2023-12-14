@@ -5,10 +5,6 @@ export const Draggable = ({ children, id }) => {
     id: id,
   });
 
-    const {attributes, listeners, setNodeRef, transform} = useDraggable({
-        id: 'draggable',
-    });
-
     const style = transform ? {
         transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
     } : undefined;
@@ -21,7 +17,6 @@ export const Draggable = ({ children, id }) => {
       {children}
     </div>
   );
-};
     </div>
     );
 }

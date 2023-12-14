@@ -2,8 +2,6 @@ import { DndContext } from "@dnd-kit/core";
 
 import { useState } from "react";
 
-
-import Draggable from "./Draggable";
 import Droppable from "./Droppable";
 
 import { Elementone } from "./Elements/Elementone";
