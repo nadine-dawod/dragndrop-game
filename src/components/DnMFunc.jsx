@@ -1,16 +1,7 @@
 import { DndContext } from "@dnd-kit/core";
 
 import { useState } from "react";
-
-import Droppable from "./Droppable";
-
 import { Elementone } from "./Elements/Elementone";
-import { Elementtwo } from "./Elements/Elementtwo";
-import { Elementthree } from "./Elements/Elementthree";
-import { Elementfour } from "./Elements/Elementfour";
-import { Elementfive } from "./Elements/Elementfive";
-import { Elementsix } from "./Elements/Elementsix";
-import { Elementseven } from "./Elements/Elementseven";
 import { Draggable } from "./Draggable";
 import { DropArea } from "./DropArea";
 
@@ -36,10 +27,10 @@ export const DnMFunc = () => {
     <DndContext onDragEnd={handleDragEnd}>
       {parent === null ? draggableMarkup : null}
       {containers.map((id) => (
-          <DropArea key={id} id={id}>
-        {parent === id ? draggableMarkup : null}
-          </DropArea>
-        ))}
+        <DropArea key={id} id={id}>
+          {parent === id ? draggableMarkup : null}
+        </DropArea>
+      ))}
     </DndContext>
   );
 };
