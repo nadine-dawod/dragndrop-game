@@ -1,14 +1,15 @@
 import { useState } from "react"; // uses the useState hook to add a variable to update the value.
 import { useNavigate } from "react-router-dom"; //to allow users to access different components
-//import axios from "axios";
 import "./Login.css";
 import axios from "axios";
+import { useAuth } from './AuthProvider';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(""); // to store and display any error messages
   const navigate = useNavigate();
+  const { dispatch } = useAuth();
 
   const checkUser = (users) => {
     // Function to validate the user
@@ -20,7 +21,7 @@ const Login = () => {
     if (user && user.email === email && user.password === password) {
       return user;
     } else {
-      navigate("/Login");
+      navigate("/login");
       return null;
     }
   };
@@ -55,6 +56,7 @@ const Login = () => {
   };
 
   const successMessage = (user) => {
+    dispatch({ type: 'LOGIN', payload: { user } });
     alert(`Hi ${user.username}`);
     navigate(`/game/${user.id}`); //  access to the user's game page after login
 
@@ -92,17 +94,17 @@ const Login = () => {
       </form>
       <div className="Login-button-container">
         <button className="Login-button" onClick={handleSubmit}>
-          Log in
+          <p className="btn-p" >Log in</p>
         </button>
         <p className="Login-p">or</p>
         <button
           className="Login-button"
-          onClick={() => navigate("/create-account")}
+          onClick={() => navigate("/register-account")}
         >
-          Create Account
+          <p className="btn-p">Create Account</p>
         </button>
       </div>
     </>
   ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page
-}; // Does our project require card functionality? We only have one user information that needs to be styled
+}; 
 export default Login;

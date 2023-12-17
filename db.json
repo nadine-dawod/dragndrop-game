@@ -35,6 +35,12 @@
       "email": "diana.unden@gmail.com",
       "password": "hejsan",
       "id": 6
+    },
+    {
+      "username": "momo",
+      "email": "momo@gmail.com",
+      "password": "0000",
+      "id": 7
     }
   ]
 }

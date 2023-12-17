@@ -9,6 +9,13 @@
     justify-content: space-evenly;
 }
 
+.error-container{
+    width: 80%;
+    width: 1440px;
+    background-color: rgba(228, 228, 231, 1);
+   
+}
+
 .loginImage{
     margin-top: 30px;
     height: 300px;
@@ -53,9 +60,11 @@ input {
     padding: 0.7rem 0;
     margin: 0.5rem 0;
     border-radius: 8px;
-    width: 300px;
+    width: 350px;
     border: 1px solid lightgray;
     padding-left: 5px; 
+    background-color: white;
+    color: black;
 }
 
 ::placeholder {
@@ -69,6 +78,7 @@ input {
     padding: 5px;
     display: flex;
     justify-content: space-around;
+    height: 60px;
 }
 
 .Login-button{
@@ -81,6 +91,7 @@ input {
     transition: background-color 0.3s;
     border: 1.5px solid #8B8989; 
     font-weight: bold;
+    color: black;
 }
 
 .Login-button:hover {
@@ -91,4 +102,9 @@ input {
 .Login-p{
     font-family: 'Inter', sans-serif;
     color: #8B8989;
+    margin-top:25px;
+}
+
+.btn-p{
+    margin-top: -9px;
 }

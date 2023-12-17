@@ -23,7 +23,7 @@ const ErrorLogin = () => {
         <span style={{ color: "red" }}>Path not found.</span>
       </p>
       <button onClick={() => navigate("/login")}>Back to Login </button>
-      <button onClick={() => navigate("/register")}>Create Account</button>
+      <button onClick={() => navigate("/register-account")}>Create Account</button>
     </div>
   );
 };
