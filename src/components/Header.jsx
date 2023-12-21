@@ -1,9 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import "./Header.css";
 import { LogOutButton } from "./LogOutButton";
 import ProfilePhoto from "../components/Images/ProfilePhoto.png";
+import { useAuth } from "./AuthProvider";
 
 export const Header = () => {
+  const { state } = useAuth();
+  const { userId } = state;
   return (
     <div className="header">
       <div>
@@ -18,7 +21,7 @@ export const Header = () => {
         <NavLink to="/login">
           <LogOutButton />
         </NavLink>
-        <NavLink to="/profile/:userId">
+        <NavLink to={`/profile/${userId}`}>
           <img src={ProfilePhoto} alt="Profile Picture" />
         </NavLink>
       </div>

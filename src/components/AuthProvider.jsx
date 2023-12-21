@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext, useReducer } from "react";
+import { useParams } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -10,13 +11,14 @@ const AuthProvider = ({ children }) => {
 
   const authReducer = (state, action) => {
     switch (action.type) {
-      case 'LOGIN':
+      case "LOGIN":
         return {
           ...state,
           user: action.payload.user,
+          userId: action.payload.user.id,
           isAuthenticated: true,
         };
-      case 'LOGOUT':
+      case "LOGOUT":
         return {
           ...state,
           user: null,
@@ -39,7 +41,7 @@ const AuthProvider = ({ children }) => {
 const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
