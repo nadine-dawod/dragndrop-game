@@ -1,5 +1,6 @@
 import "./LogOutButton.css";
 
+
 export const LogOutButton = () => {
   return (
     <div className="logOutButton" onClick={() => navigate("/login")}>

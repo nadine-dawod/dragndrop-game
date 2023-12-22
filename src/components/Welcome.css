@@ -1,0 +1,35 @@
+.Welcome {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2463EB;
+    margin: 50px;
+}
+
+.DisplayName {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #8B8989;
+}
+
+.DisplayEmail {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #8B8989;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

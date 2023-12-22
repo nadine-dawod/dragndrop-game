@@ -37,10 +37,28 @@
       "id": 6
     },
     {
-      "username": "momo",
-      "email": "momo@gmail.com",
-      "password": "0000",
+      "username": "Sasz",
+      "email": "saskiavanderzanden@gmail.com",
+      "password": "xoxo",
       "id": 7
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 8
+    },
+    {
+      "username": "Loka",
+      "email": "loka@gmail.com",
+      "password": "loka",
+      "id": 9
+    },
+    {
+      "username": "Bar",
+      "email": "Bar@gmail.com",
+      "password": "BarBar",
+      "id": 10
     }
   ]
 }

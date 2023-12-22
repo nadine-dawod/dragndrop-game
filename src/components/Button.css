@@ -1,20 +1,13 @@
 .btn {
-    background-color: rgba(36, 99, 235, 1);
-    color: rgba(255, 255, 255, 1);
+    background-color:#2463EB;
+    color: #FFFFFF;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 35px;
     text-align: center;
     font-weight: 600;
-
-    border-color: rgba(228, 228, 231, 1);
+    border-color: lightgray;
     border-style: solid;
-    border: 10px;
+    border-width: thin;
     border-radius: 12px;
-    width: 170px;
-    height: 44px;
-    padding-left: 16px;
-    padding-right: 16px;
-
-
 }

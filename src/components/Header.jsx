@@ -5,8 +5,9 @@ import ProfilePhoto from "../components/Images/ProfilePhoto.png";
 import { useAuth } from "./AuthProvider";
 
 export const Header = () => {
-  const { state } = useAuth();
-  const { userId } = state;
+const userName = JSON.parse(localStorage.getItem("userName"))//get username from local storage, without the quotes
+console.log(userName); //check if it works
+
   return (
     <div className="header">
       <div>
@@ -21,8 +22,9 @@ export const Header = () => {
         <NavLink to="/login">
           <LogOutButton />
         </NavLink>
-        <NavLink to={`/profile/${userId}`}>
+        <NavLink to="/profile/:userId">
           <img src={ProfilePhoto} alt="Profile Picture" />
+          <p className="userName">{userName}</p>
         </NavLink>
       </div>
     </div>

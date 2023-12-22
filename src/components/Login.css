@@ -81,6 +81,8 @@ input {
     height: 60px;
 }
 
+
+/*
 .Login-button{
     background: none;
     border-radius: 8px;
@@ -91,13 +93,16 @@ input {
     transition: background-color 0.3s;
     border: 1.5px solid #8B8989; 
     font-weight: bold;
-    color: black;
-}
+} 
+
 
 .Login-button:hover {
     background-color: rgb(39, 39, 238);
     color: white;
 }
+
+I think we can remove the styling for the button here as we already have a general styling for buttons
+*/
 
 .Login-p{
     font-family: 'Inter', sans-serif;
