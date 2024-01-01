@@ -1,5 +1,5 @@
 import { useState } from "react"; // uses the useState hook to add a variable to update the value.
-import { useNavigate, useParams } from "react-router-dom"; //to allow users to access different components
+import { NavLink, useNavigate, useParams } from "react-router-dom"; //to allow users to access different components
 import "./Login.css";
 import axios from "axios";
 import { useAuth } from "./AuthProvider";
@@ -95,16 +95,13 @@ const Login = () => {
         </label>
       </form>
       <div className="Login-button-container">
-        <button className="Login-button" onClick={handleSubmit}>
-          <p className="btn-p">Log in</p>
-        </button>
+        <NavLink to="/login" className="button" onClick={handleSubmit}>
+          Login
+        </NavLink>
         <p className="Login-p">or</p>
-        <button
-          className="Login-button"
-          onClick={() => navigate("/register-account")}
-        >
-          <p className="btn-p">Create Account</p>
-        </button>
+        <NavLink to="/register-account" className="button">
+          Create Account
+        </NavLink>
       </div>
     </>
   ); //onChange is used to listen for user input in a text input box., onFormSwitch to switch to other page

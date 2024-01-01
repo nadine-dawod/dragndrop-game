@@ -22,6 +22,7 @@ const AuthProvider = ({ children }) => {
         return {
           ...state,
           user: null,
+          userId: null,
           isAuthenticated: false,
         };
       default:

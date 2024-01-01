@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useAuth } from "./AuthProvider";
+import profileFrame from "../components/Images/profileFrame.png";
 
 export const ProfileDetails = () => {
+  const userName = JSON.parse(localStorage.getItem("userName")); //get username from local storage, without the quotes
+  const userEmail = JSON.parse(localStorage.getItem("userEmail")); //get user email from local storage, without the quotes
+
   const { userId } = useParams();
   const { state } = useAuth();
   const { user } = state;
@@ -40,6 +44,17 @@ export const ProfileDetails = () => {
       ) : (
         <p>Loading...</p>
       )}
+
+      <div className="container">
+        <div className="left">
+          <img className="profileFrame" src={profileFrame} />
+          <div className="nameBlock">
+            <h1 className="DisplayName"> {userName}</h1>
+            <h1 className="DisplayEmail"> {userEmail}</h1>
+          </div>
+          <button className="btn">Edit Profile</button>
+        </div>
+      </div>
     </div>
   );
 };
