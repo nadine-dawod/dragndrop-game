@@ -1,30 +1,37 @@
-import React from "react";
-import { useState } from "react";
-import { useDrag } from "@use-gesture/react";
-import { Elementone } from "../components/Elements/Elementone";
+import { Instructions } from "../components/Instructions";
+import DnDthree from "../components/DnDthree";
+import DnDfour from "../components/DnDfour";
+import DnDfive from "../components/DnDfive";
+import DnDsix from "../components/DnDsix";
+import DnDseven from "../components/DnDseven";
+import DnDtwo from "../components/DnDtwo";
+import DnDone from "../components/DnDone";
 
 export const GamePage = () => {
-  const [elementPos, setElementPos] = useState({ x: 0, y: 0 });
-  const bindElementPos = useDrag((params) => {
-    setElementPos({
-      x: params.offset[0],
-      y: params.offset[1],
-    });
-  });
+ 
   return (
-    <div style={{ marginTop: "25px" }}>
-      <div
-        {...bindElementPos()}
+    <>
+    <div
         style={{
-          position: "relative",
-          top: elementPos.y,
-          left: elementPos.x,
-          touchAction: "none",
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "row",
+          alignItems: "baseline",
+          marginLeft: "5rem",
+          marginRight: "5rem",
+          marginTop: "5rem",
         }}
       >
-        <Elementone />
+        <DnDone />
+        <DnDtwo />
+        <DnDthree />
+        <DnDfour />
+        <DnDfive />
+        <DnDsix />
+        <DnDseven />
       </div>
-    </div>
+      <Instructions />
+      </>
   );
 };
 
