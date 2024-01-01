@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from 'react';
 import { useDrag } from '@use-gesture/react';
-import { Elementone } from "../components/Elements/Elementone";
+import { Elementsix } from "../components/Elements/Elementsix";
 
 
-export const GamePage = () => {
+export const DnDsix = () => {
   const [elementPos, setElementPos] = useState({ x: 0, y: 0});
   const bindElementPos= useDrag((params) => {
 setElementPos({
@@ -20,14 +20,9 @@ y:params.offset[1],
         left: elementPos.x,
         touchAction: 'none',
       }}>
-         <Elementone/>
+         <Elementsix/>
       </div>
-
-    
-   
   </div>
 )};
 
-export default GamePage;
-
-/* I think this page can go, it's not used anymore, saskia*/
+export default DnDsix;

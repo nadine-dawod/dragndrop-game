@@ -4,7 +4,7 @@ import { useDrag } from '@use-gesture/react';
 import { Elementone } from "../components/Elements/Elementone";
 
 
-export const GamePage = () => {
+export const DnDone = () => {
   const [elementPos, setElementPos] = useState({ x: 0, y: 0});
   const bindElementPos= useDrag((params) => {
 setElementPos({
@@ -28,6 +28,4 @@ y:params.offset[1],
   </div>
 )};
 
-export default GamePage;
-
-/* I think this page can go, it's not used anymore, saskia*/
+export default DnDone;

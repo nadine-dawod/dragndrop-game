@@ -30,8 +30,8 @@
 }
 
 .userName {
-  color: #8B8989;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
-  letter-spacing: 32%;
+  font-weight: 600;
+  color: #8B8989;
 }
