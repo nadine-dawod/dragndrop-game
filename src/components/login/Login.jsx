@@ -61,9 +61,9 @@ const Login = () => {
     alert(`Hi ${user.username}`);
     navigate(`/game/${user.id}`); //  access to the user's game page after login
 
-    localStorage.setItem("user", JSON.stringify(user.id));
-    localStorage.setItem("userName", JSON.stringify(user.username)); //I've put an extra line of code in here to catch the username/Saskia
-    localStorage.setItem("userEmail", JSON.stringify(user.email)); //Same for the email adress
+    // localStorage.setItem("user", JSON.stringify(user.id));
+    // localStorage.setItem("userName", JSON.stringify(user.username)); //I've put an extra line of code in here to catch the username/Saskia
+    // localStorage.setItem("userEmail", JSON.stringify(user.email)); //Same for the email adress
     resetForm();
   };
 
