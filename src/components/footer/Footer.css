@@ -10,6 +10,10 @@
   letter-spacing: 1%;
 }
 
+.gh-link {
+  font-weight: normal;
+}
+
 span {
   color: #9CE5CA;
 }
