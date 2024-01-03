@@ -1,17 +1,16 @@
 import { Instructions } from "../components/Instructions";
-import DnDthree from "../components/DnDthree";
-import DnDfour from "../components/DnDfour";
-import DnDfive from "../components/DnDfive";
-import DnDsix from "../components/DnDsix";
-import DnDseven from "../components/DnDseven";
-import DnDtwo from "../components/DnDtwo";
-import DnDone from "../components/DnDone";
+import DnDthree from "../components/dragNDrop/DnDthree";
+import DnDfour from "../components/dragNDrop/DnDfour";
+import DnDfive from "../components/dragNDrop/DnDfive";
+import DnDsix from "../components/dragNDrop/DnDsix";
+import DnDseven from "../components/dragNDrop/DnDseven";
+import DnDtwo from "../components/dragNDrop/DnDtwo";
+import DnDone from "../components/dragNDrop/DnDone";
 
 export const GamePage = () => {
- 
   return (
     <>
-    <div
+      <div
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -31,7 +30,7 @@ export const GamePage = () => {
         <DnDseven />
       </div>
       <Instructions />
-      </>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import { useState } from "react"; // uses the useState hook to add a variable to
 import { NavLink, useNavigate, useParams } from "react-router-dom"; //to allow users to access different components
 import "./Login.css";
 import axios from "axios";
-import { useAuth } from "./AuthProvider";
+import { useAuth } from "../AuthProvider";
 
 const Login = () => {
   const [email, setEmail] = useState("");
