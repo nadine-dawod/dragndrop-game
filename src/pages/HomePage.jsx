@@ -1,10 +1,13 @@
-import GamePage from "./GamePage"
+import GamePage from "./GamePage";
+
 
 
 export const HomePage = () => {
   return (
     <div>
-      <GamePage />
+      <h2>Hello and welcome to our game!</h2>
+      <p>Login or create an account to play.</p>
+      
     </div>
   );
 };

@@ -9,6 +9,13 @@
     justify-content: space-evenly;
 }
 
+.error-container{
+    width: 80%;
+    width: 1440px;
+    background-color: rgba(228, 228, 231, 1);
+   
+}
+
 .loginImage{
     margin-top: 30px;
     height: 300px;
@@ -48,22 +55,16 @@
     align-items: center;
 }
 
-::placeholder{
-    color: black;
-}
-
 input {
     text-align: left;
     padding: 0.7rem 0;
     margin: 0.5rem 0;
     border-radius: 8px;
-    width: 300px;
+    width: 350px;
     border: 1px solid lightgray;
     padding-left: 5px; 
-}
-
-.Login-button-container{
-    min-width: 250px;
+    background-color: white;
+    color: black;
 }
 
 ::placeholder {
@@ -71,14 +72,17 @@ input {
     font-size: 14px;
 }
 
-.button-container{
+.Login-button-container{
     min-width: 150px;
     margin-top: 20px;
     padding: 5px;
     display: flex;
     justify-content: space-around;
+    height: 60px;
 }
 
+
+/*
 .Login-button{
     background: none;
     border-radius: 8px;
@@ -89,14 +93,23 @@ input {
     transition: background-color 0.3s;
     border: 1.5px solid #8B8989; 
     font-weight: bold;
-}
+} 
+
 
 .Login-button:hover {
     background-color: rgb(39, 39, 238);
     color: white;
 }
 
+I think we can remove the styling for the button here as we already have a general styling for buttons
+*/
+
 .Login-p{
     font-family: 'Inter', sans-serif;
     color: #8B8989;
+    margin-top:25px;
+}
+
+.btn-p{
+    margin-top: -9px;
 }

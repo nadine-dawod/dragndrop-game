@@ -1,23 +1,20 @@
-import "../src/App.css"
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { HomePage } from "./pages/HomePage";
-import { GamePage } from "./pages/GamePage";
-import { ProfilePage } from "./pages/ProfilePage";
-//import Login from "./components/Login";
-//import ErrorLogin  from "./components/ErrorLogin";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import "../src/App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Footer } from "./components/footer/Footer";
+import { Header } from "./components/header/Header";
 import routes from "./routes/routes";
-import Register from "./components/Register";
+import { AuthProvider } from "./components/AuthProvider";
 
 function App() {
   return (
     <>
-      <Router>
-        <Header />
-        {routes}
-        <Footer />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header />
+          {routes}
+          <Footer />
+        </Router>
+      </AuthProvider>
     </>
   );
 }

@@ -28,3 +28,10 @@
   letter-spacing: 32%;
   padding-left: 2rem;
 }
+
+.userName {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #8B8989;
+}
