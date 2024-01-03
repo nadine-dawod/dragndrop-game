@@ -53,6 +53,12 @@
       "email": "Bar@gmail.com",
       "password": "BarBar",
       "id": 10
+    },
+    {
+      "username": "Nadine",
+      "email": "Nadine@dawod.com",
+      "password": "hejhopp",
+      "id": 11
     }
   ]
 }
