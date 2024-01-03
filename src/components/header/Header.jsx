@@ -1,7 +1,7 @@
 import { NavLink, Navigate, useParams } from "react-router-dom";
 import "./Header.css";
-import ProfilePhoto from "../components/Images/ProfilePhoto.png";
-import { useAuth } from "./AuthProvider";
+import ProfilePhoto from "../Images/ProfilePhoto.png";
+import { useAuth } from "../AuthProvider";
 
 export const Header = () => {
   const { state } = useAuth();
