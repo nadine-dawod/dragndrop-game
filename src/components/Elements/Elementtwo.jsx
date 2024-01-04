@@ -1,5 +1,3 @@
-import { useDraggable } from "@dnd-kit/core";
-
 export const Elementtwo = ({ id, ref, className, style }) => {
   return (
     <div

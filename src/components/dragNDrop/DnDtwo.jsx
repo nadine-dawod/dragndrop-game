@@ -1,31 +1,34 @@
 import React from "react";
 import { useState } from "react";
-import { useDrag } from "@use-gesture/react";
+import { createUseGesture, dragAction } from "@use-gesture/react";
 import { Elementtwo } from "../Elements/Elementtwo";
 
 export const DnDtwo = ({ id }) => {
   const [elementPos, setElementPos] = useState({
+    //get position saved in localStorage and save it in local state
     x: parseInt(localStorage.getItem(`position_${id}_x`), 10) || 0,
     y: parseInt(localStorage.getItem(`position_${id}_y`), 10) || 0,
   });
 
-  const handleDragEnd = () => {
-    localStorage.setItem(`position_${id}_x`, elementPos.x.toString());
-    localStorage.setItem(`position_${id}_y`, elementPos.y.toString());
-  };
+  const useGesture = createUseGesture([dragAction]);
 
-  const bindElementPos = useDrag(
-    ({ offset, down }) => {
-      setElementPos({
-        x: offset[0],
-        y: offset[1],
-      });
+  const bindElementPos = useGesture(
+    {
+      onDrag: ({ offset }) => {
+        setElementPos({
+          x: offset[0],
+          y: offset[1],
+        });
+      },
 
-      if (!down) {
-        handleDragEnd();
-      }
+      onDragEnd: ({ offset }) => {
+        //save the position on dragEnd to localStorage
+        localStorage.setItem(`position_${id}_x`, offset[0].toString());
+        localStorage.setItem(`position_${id}_y`, offset[1].toString());
+      },
     },
-    { onDragEnd: handleDragEnd }
+    //when you start dragging, start offset from the position saved in the local state
+    { drag: { from: [elementPos.x, elementPos.y] } }
   );
 
   return (
@@ -33,7 +36,7 @@ export const DnDtwo = ({ id }) => {
       <div
         {...bindElementPos()}
         style={{
-          position: "absolute",
+          position: "relative",
           top: elementPos.y,
           left: elementPos.x,
           touchAction: "none",
