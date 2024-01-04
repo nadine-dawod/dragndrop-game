@@ -6,7 +6,7 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const initialState = {
     user: null,
-    userId: localStorage.getItem("userId"),
+    userId: localStorage.getItem("userId") || null,
     isAuthenticated: localStorage.getItem("userId") ? true : false,
   };
 
@@ -18,6 +18,7 @@ const AuthProvider = ({ children }) => {
           ...state,
           user: action.payload.user,
           userId: action.payload.user.id,
+          username: action.payload.user.username,
           isAuthenticated: true,
         };
       case "LOGOUT":
@@ -26,6 +27,7 @@ const AuthProvider = ({ children }) => {
           ...state,
           user: null,
           userId: null,
+          username: null,
           isAuthenticated: false,
         };
       default:

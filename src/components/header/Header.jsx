@@ -2,22 +2,38 @@ import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./Header.css";
 import ProfilePhoto from "../Images/ProfilePhoto.png";
 import { useAuth } from "../AuthProvider";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const Header = () => {
   const { state, dispatch } = useAuth();
-  const { userId } = state;
+  const { userId, isAuthenticated } = state;
   const navigate = useNavigate();
-  const userName = JSON.parse(localStorage.getItem("userName")); //get username from local storage, without the quotes
-  console.log(userName); //check if it works
+  const [users, setUsers] = useState(null);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      axios
+        .get("http://localhost:6001/users")
+        .then((response) => {
+          console.log("Response.data", response.data);
+          const loggedInUser = response.data.find(
+            (userData) => userData.id === parseInt(userId)
+          );
+          setUsers(loggedInUser ? [loggedInUser] : []);
+        })
+        .catch((error) => {
+          console.error("Oops, there is a problem fetching data:", error);
+        });
+    }
+  }, [isAuthenticated, userId]);
 
   const handleLogOut = () => {
+    alert(`You are now logged out`);
     dispatch({ type: "LOGOUT" });
-    alert(`Hi ${userName}, you are now logged out`);
-    navigate(`/`); //  access to the user's game page after login
+    navigate(`/`);
     console.log("log out");
-    localStorage.removeItem("user");
-    localStorage.removeItem("userName");
-    localStorage.removeItem("userEmail");
+    window.location.reload(); //refreshes the page to remove the username from header
   };
 
   return (
@@ -36,7 +52,15 @@ export const Header = () => {
         {/* Add function to log out */}
         <NavLink to={`/profile/${userId}`}>
           <img src={ProfilePhoto} alt="Profile Picture" />
-          <p className="userName">{userName}</p>
+          {users ? (
+            users.map((userData) => (
+              <div key={userData.id}>
+                <p className="userName">{userData.username}</p>
+              </div>
+            ))
+          ) : (
+            <p></p>
+          )}
         </NavLink>
       </div>
     </div>
