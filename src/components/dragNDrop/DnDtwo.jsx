@@ -3,26 +3,43 @@ import { useState } from "react";
 import { useDrag } from "@use-gesture/react";
 import { Elementtwo } from "../Elements/Elementtwo";
 
-export const DnDtwo = () => {
-  const [elementPos, setElementPos] = useState({ x: 0, y: 0 });
-  const bindElementPos = useDrag((params) => {
-    setElementPos({
-      x: params.offset[0],
-      y: params.offset[1],
-    });
+export const DnDtwo = ({ id }) => {
+  const [elementPos, setElementPos] = useState({
+    x: parseInt(localStorage.getItem(`position_${id}_x`), 10) || 0,
+    y: parseInt(localStorage.getItem(`position_${id}_y`), 10) || 0,
   });
+
+  const handleDragEnd = () => {
+    localStorage.setItem(`position_${id}_x`, elementPos.x.toString());
+    localStorage.setItem(`position_${id}_y`, elementPos.y.toString());
+  };
+
+  const bindElementPos = useDrag(
+    ({ offset, down }) => {
+      setElementPos({
+        x: offset[0],
+        y: offset[1],
+      });
+
+      if (!down) {
+        handleDragEnd();
+      }
+    },
+    { onDragEnd: handleDragEnd }
+  );
+
   return (
     <div style={{ marginTop: "25px" }}>
       <div
         {...bindElementPos()}
         style={{
-          position: "relative",
+          position: "absolute",
           top: elementPos.y,
           left: elementPos.x,
           touchAction: "none",
         }}
       >
-        <Elementtwo />
+        <Elementtwo id={id} />
       </div>
     </div>
   );
