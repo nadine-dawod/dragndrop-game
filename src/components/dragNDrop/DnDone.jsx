@@ -7,7 +7,7 @@ export const DnDone = ({ id }) => {
     x: parseInt(localStorage.getItem(`position_${id}_x`), 10) || 0,
     y: parseInt(localStorage.getItem(`position_${id}_y`), 10) || 0,
   });
-
+  console.log("elementPos", elementPos);
   const handleDragEnd = () => {
     localStorage.setItem(`position_${id}_x`, elementPos.x.toString());
     localStorage.setItem(`position_${id}_y`, elementPos.y.toString());
@@ -15,6 +15,7 @@ export const DnDone = ({ id }) => {
 
   const bindElementPos = useDrag(
     ({ offset, down }) => {
+      console.log("offset", offset, "down", down);
       setElementPos({
         x: offset[0],
         y: offset[1],
