@@ -30,10 +30,12 @@ export const GamePage = () => {
         <DnDseven />
       </div>
       <Instructions />
+      <div className="playArea"style={{
+        minHeight: "35rem", backgroundColor:"#edecec" 
+        }}></div>
     </>
   );
 };
 
 export default GamePage;
 
-/* I think this page can go, it's not used anymore, saskia*/
