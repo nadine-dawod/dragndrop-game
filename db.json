@@ -55,10 +55,40 @@
       "id": 10
     },
     {
+      "username": "fafa",
+      "email": "fafa@gmail.com",
+      "password": "1234",
+      "id": 11
+    },
+    {
+      "username": "vovo",
+      "email": "vovo@gmail.com",
+      "password": "1234",
+      "id": 12
+    },
+    {
       "username": "Nadine",
       "email": "Nadine@dawod.com",
       "password": "hejhopp",
-      "id": 11
+      "id": 13
+    },
+    {
+      "username": "dada",
+      "email": "dada@gmail.com",
+      "password": "1234",
+      "id": 14
+    },
+    {
+      "username": "didi",
+      "email": "didi@gmail.com",
+      "password": "1234",
+      "id": 15
+    },
+    {
+      "username": "klonk",
+      "email": "klonk@gmail.com",
+      "password": "1234",
+      "id": 16
     }
   ]
 }

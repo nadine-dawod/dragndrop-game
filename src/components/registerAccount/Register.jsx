@@ -3,10 +3,12 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
+import "../Button.css";
+
 
 //  TODO:
-//  1. does the register function work with t he login function? I THINK SO, BUT CHECK AGAIN AFTER MERGE
-//  2. Add correct navigation iin register code.
+//  1. Add correct navigation to profile page after register - private route.
+//  2. add error page - add anything to catch (error)?
   
 
 const Register = () => { 
@@ -30,11 +32,10 @@ const Register = () => {
           if (user) {       // if - there is a matching user alert
             alert("Username or email already exists. Please try again!");
           } else {          // else - create newUser
-            console.log("i else satsen")
             const newUser = { username, email, password: password1 };
               axios.post("http://localhost:6001/users", newUser)  
-              .then(() => alert("User created!"));                
-              navigate("/"); // ==== ADD CORRECT ROUTE HERE ===  
+              .then(() => alert("User created! Login to play!"));                
+              navigate("/");  
           } 
 
           }
@@ -50,7 +51,6 @@ const Register = () => {
   return (
     <div className="container">
       <form className="form-container">
-        <h1>Register User</h1>
         <label>
           <input
             type="text"
@@ -88,7 +88,7 @@ const Register = () => {
           />
         </label>
         <button className="btn" type="submit" onClick={handleSubmit}>
-          <p>Register Account</p>
+          <p>Create Account</p>
         </button> 
       </form>
     </div>
