@@ -1,22 +1,39 @@
-import { NavLink, Navigate, useParams } from "react-router-dom";
+import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./Header.css";
 import ProfilePhoto from "../Images/ProfilePhoto.png";
-import { useAuth } from "../AuthProvider";
+import { useAuth } from "../../reducers/AuthProvider";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const Header = () => {
-  const { state } = useAuth();
-  const { userId } = state;
-  const userName = JSON.parse(localStorage.getItem("userName")); //get username from local storage, without the quotes
-  console.log(userName); //check if it works
+  const { state, dispatch } = useAuth();
+  const { userId, isAuthenticated } = state;
+  const navigate = useNavigate();
+  const [users, setUsers] = useState(null);
 
-  const handleLogOut = (user) => {
-    dispatchEvent({ type: "LOGOUT", payload: { user } });
-    alert(`Hi ${user.username}, you are now logged out`);
-    Navigate(`/`); //  access to the user's game page after login
+  useEffect(() => {
+    if (isAuthenticated) {
+      axios
+        .get("http://localhost:6001/users")
+        .then((response) => {
+          console.log("Response.data", response.data);
+          const loggedInUser = response.data.find(
+            (userData) => userData.id === parseInt(userId)
+          );
+          setUsers(loggedInUser ? [loggedInUser] : []);
+        })
+        .catch((error) => {
+          console.error("Oops, there is a problem fetching data:", error);
+        });
+    }
+  }, [isAuthenticated, userId]);
 
-    localStorage.setItem("user", JSON.stringify(null));
-    localStorage.setItem("userName", JSON.stringify(null));
-    localStorage.setItem("userEmail", JSON.stringify(null));
+  const handleLogOut = () => {
+    alert(`You are now logged out`);
+    dispatch({ type: "LOGOUT" });
+    navigate(`/`);
+    console.log("log out");
+    window.location.reload(); //refreshes the page to remove the username from header
   };
 
   return (
@@ -35,7 +52,15 @@ export const Header = () => {
         {/* Add function to log out */}
         <NavLink to={`/profile/${userId}`}>
           <img src={ProfilePhoto} alt="Profile Picture" />
-          <p className="userName">{userName}</p>
+          {users ? (
+            users.map((userData) => (
+              <div key={userData.id}>
+                <p className="userName">{userData.username}</p>
+              </div>
+            ))
+          ) : (
+            <p></p>
+          )}
         </NavLink>
       </div>
     </div>
