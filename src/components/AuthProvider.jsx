@@ -6,12 +6,14 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const initialState = {
     user: null,
-    isAuthenticated: false,
+    userId: localStorage.getItem("userId"),
+    isAuthenticated: localStorage.getItem("userId") ? true : false,
   };
 
   const authReducer = (state, action) => {
     switch (action.type) {
       case "LOGIN":
+        localStorage.setItem("userId", action.payload.user.id);
         return {
           ...state,
           user: action.payload.user,
@@ -19,6 +21,7 @@ const AuthProvider = ({ children }) => {
           isAuthenticated: true,
         };
       case "LOGOUT":
+        localStorage.removeItem("userId");
         return {
           ...state,
           user: null,

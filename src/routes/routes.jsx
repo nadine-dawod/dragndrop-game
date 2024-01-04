@@ -6,7 +6,6 @@ import { LoginAccountPage } from "../pages/LoginAccountPage";
 import { RegisterAccountPage } from "../pages/RegisterAccountPage";
 import ErrorLogin from "../components/ErrorLogin";
 import ProtectedRoute from "./protectedRoutes";
-import { ProfileDetails } from "../components/profile/ProfileDetails";
 
 const routes = (
   <Routes>
@@ -15,7 +14,6 @@ const routes = (
     <Route path="/login" element={<LoginAccountPage />} />
     <Route path="/register-account" element={<RegisterAccountPage />} />
     {/* Private routes */}
-
     <Route
       path="/game/:userId"
       element={<ProtectedRoute element={<GamePage />} />}
