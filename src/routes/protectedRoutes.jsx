@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Navigate, Route, useNavigate, useParams } from "react-router-dom";
-import { useAuth } from "../components/AuthProvider";
+import { useAuth } from "../reducers/AuthProvider";
 
 const ProtectedRoute = ({ element, ...rest }) => {
   const { state } = useAuth();

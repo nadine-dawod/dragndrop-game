@@ -1,7 +1,7 @@
 import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./Header.css";
 import ProfilePhoto from "../Images/ProfilePhoto.png";
-import { useAuth } from "../AuthProvider";
+import { useAuth } from "../../reducers/AuthProvider";
 import { useEffect, useState } from "react";
 import axios from "axios";
 

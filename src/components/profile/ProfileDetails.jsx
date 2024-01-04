@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { useAuth } from "../AuthProvider";
+import { useAuth } from "../../reducers/AuthProvider";
 import profileFrame from "../Images/profileFrame.png";
 import ProfileContent from "../Images/ProfileContent.png";
 import "./Welcome.css";
