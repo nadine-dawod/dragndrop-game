@@ -1,22 +1,23 @@
-import { NavLink, Navigate, useParams } from "react-router-dom";
+import { NavLink, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./Header.css";
 import ProfilePhoto from "../Images/ProfilePhoto.png";
 import { useAuth } from "../AuthProvider";
 
 export const Header = () => {
-  const { state } = useAuth();
+  const { state, dispatch } = useAuth();
   const { userId } = state;
+  const navigate = useNavigate();
   const userName = JSON.parse(localStorage.getItem("userName")); //get username from local storage, without the quotes
   console.log(userName); //check if it works
 
-  const handleLogOut = (user) => {
-    dispatchEvent({ type: "LOGOUT", payload: { user } });
-    alert(`Hi ${user.username}, you are now logged out`);
-    Navigate(`/`); //  access to the user's game page after login
-
-    localStorage.setItem("user", JSON.stringify(null));
-    localStorage.setItem("userName", JSON.stringify(null));
-    localStorage.setItem("userEmail", JSON.stringify(null));
+  const handleLogOut = () => {
+    dispatch({ type: "LOGOUT" });
+    alert(`Hi ${userName}, you are now logged out`);
+    navigate(`/`); //  access to the user's game page after login
+    console.log("log out");
+    localStorage.removeItem("user");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
   };
 
   return (
