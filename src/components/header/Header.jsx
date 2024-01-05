@@ -5,6 +5,7 @@ import { useAuth } from "../../reducers/AuthProvider";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 export const Header = () => {
   const { state, dispatch } = useAuth();
   const { userId, isAuthenticated } = state;
@@ -46,7 +47,7 @@ export const Header = () => {
       <div className="navBar">
         <NavLink to={`/game/${userId}`}>Play</NavLink>
         <NavLink to="/about">About</NavLink>
-        <NavLink to="/" onClick={handleLogOut}>
+        <NavLink className="btn" to="/" onClick={handleLogOut}>
           Log Out
         </NavLink>
         {/* Add function to log out */}
