@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useAuth } from "./AuthProvider";
 import profileFrame from "../components/Images/profileFrame.png";
+import "./ProfilePage.css";
 
 export const ProfileDetails = () => {
   const userName = JSON.parse(localStorage.getItem("userName")); //get username from local storage, without the quotes
