@@ -4,7 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
-
 //  TODO:
 //  1. Add correct navigation to profile page after register - private route.
 //  2. add error page - add anything to catch (error)?
