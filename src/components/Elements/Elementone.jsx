@@ -1,9 +1,11 @@
-import { useDraggable } from "@dnd-kit/core";
-import { useDroppable } from "@dnd-kit/core";
-
 export const Elementone = ({ id, ref, className, style }) => {
   return (
-    <div id={id} ref={ref} className={className} style={style}>
+    <div
+      id={id}
+      ref={ref}
+      className={className}
+      style={{ ...style, position: "absolute" }}
+    >
       <svg
         width="100"
         height="140"

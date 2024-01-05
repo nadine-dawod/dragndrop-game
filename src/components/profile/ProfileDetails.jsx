@@ -5,6 +5,7 @@ import { useAuth } from "../../reducers/AuthProvider";
 import profileFrame from "../Images/profileFrame.png";
 import ProfileContent from "../Images/ProfileContent.png";
 import "./Welcome.css";
+import "../button.css";
 
 export const ProfileDetails = () => {
   // const userName = JSON.parse(localStorage.getItem("userName")); //get username from local storage, without the quotes

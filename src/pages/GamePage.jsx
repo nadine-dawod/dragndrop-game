@@ -21,21 +21,24 @@ export const GamePage = () => {
           marginTop: "5rem",
         }}
       >
-        <DnDone />
-        <DnDtwo />
-        <DnDthree />
-        <DnDfour />
-        <DnDfive />
-        <DnDsix />
-        <DnDseven />
+        <DnDone id="element1" />
+        <DnDtwo id="element2" />
+        <DnDthree id="element3" />
+        <DnDfour id="element4" />
+        <DnDfive id="element5" />
+        <DnDsix id="element6" />
+        <DnDseven id="element7" />
       </div>
       <Instructions />
-      <div className="playArea"style={{
-        minHeight: "35rem", backgroundColor:"#edecec" 
-        }}></div>
+      <div
+        className="playArea"
+        style={{
+          minHeight: "35rem",
+          backgroundColor: "#edecec",
+        }}
+      ></div>
     </>
   );
 };
 
 export default GamePage;
-
