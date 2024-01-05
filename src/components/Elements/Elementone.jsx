@@ -4,7 +4,7 @@ export const Elementone = ({ id, ref, className, style }) => {
       id={id}
       ref={ref}
       className={className}
-      style={{ ...style, position: "absolute" }}
+      style={{ ...style, position: "relative" }}
     >
       <svg
         width="100"

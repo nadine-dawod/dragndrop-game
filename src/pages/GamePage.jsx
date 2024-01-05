@@ -29,7 +29,10 @@ export const GamePage = () => {
 
   return (
     <>
+      <div>
         <Instructions />
+      </div>
+
       <div
         style={{
           display: "flex",
@@ -50,7 +53,7 @@ export const GamePage = () => {
         <DnDsix id="element6" resetStatus={resetStatus} />
         <DnDseven id="element7" resetStatus={resetStatus} />
       </div>
-      
+
       <div
         className="playArea"
         style={{

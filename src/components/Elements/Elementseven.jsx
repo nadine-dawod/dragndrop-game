@@ -4,11 +4,10 @@ export const Elementseven = ({ id, ref, className, style }) => {
       id={id}
       ref={ref}
       className={className}
-      style={{ ...style, position: "absolute" }}
+      style={{ ...style, position: "relative" }}
     >
       {" "}
       <svg
-        id="Seven"
         width="20"
         height="140"
         viewBox="0 0 20 140"
