@@ -1,18 +1,20 @@
-import React, { createContext, useContext, useReducer } from "react";
-import { useParams } from "react-router-dom";
+import { createContext, useContext, useReducer } from "react";
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const initialState = {
     user: null,
+    //attempt to retrieve the userId from the localStorage and if it can´t find it, set it to null
     userId: localStorage.getItem("userId") || null,
+    //If the userId is retrieved from the localStorage, set isAuthenticated to true, otherwise set it to false
     isAuthenticated: localStorage.getItem("userId") ? true : false,
   };
 
   const authReducer = (state, action) => {
     switch (action.type) {
       case "LOGIN":
+        //saves the userId to the localStorage when login in
         localStorage.setItem("userId", action.payload.user.id);
         return {
           ...state,
@@ -22,6 +24,7 @@ const AuthProvider = ({ children }) => {
           isAuthenticated: true,
         };
       case "LOGOUT":
+        //cleans up the userId from the localStorage on logout
         localStorage.removeItem("userId");
         return {
           ...state,

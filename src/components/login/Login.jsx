@@ -10,7 +10,7 @@ const Login = () => {
   const [error, setError] = useState(""); // to store and display any error messages
   const navigate = useNavigate();
   const { dispatch } = useAuth();
-  const { userId } = useParams();
+  // const { userId } = useParams();
 
   const checkUser = (users) => {
     // Function to validate the user
