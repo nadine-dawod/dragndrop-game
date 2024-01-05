@@ -4,6 +4,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
+
+
+
 //  TODO:
 //  1. Add correct navigation to profile page after register - private route.
 //  2. add error page - add anything to catch (error)?
@@ -87,9 +90,7 @@ const Register = () => {
             onChange={(e) => setPassword2(e.target.value)}
           />
         </label>
-        <button className="btn" type="submit" onClick={handleSubmit}>
-          <p>Create Account</p>
-        </button>
+        <button className="btn" type="submit" onClick={handleSubmit}>Create Account</button> 
       </form>
     </div>
   );

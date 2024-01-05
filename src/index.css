@@ -51,7 +51,12 @@ body {
   transition: color 0.25s;
 }
 
-button:hover {
+button:hover  {
+  outline: 2px solid lightgray;
+  background-color: #9CE5CA;
+}
+
+.btn:hover  {
   outline: 2px solid lightgray;
   background-color: #9CE5CA;
 }
