@@ -14,7 +14,10 @@ export const Elementfour = ({ id, ref, className, style }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M0 0H300V10H0V0Z" fill="black" />
+        <path 
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0 0H300V10H0V0Z" fill="black" />
       </svg>
     </div>
   );
