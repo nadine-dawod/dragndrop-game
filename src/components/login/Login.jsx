@@ -10,7 +10,7 @@ const Login = () => {
   const [error, setError] = useState(""); // to store and display any error messages
   const navigate = useNavigate();
   const { dispatch } = useAuth();
-  const { userId } = useParams();
+  // const { userId } = useParams();
 
   const checkUser = (users) => {
     // Function to validate the user
@@ -99,11 +99,11 @@ const Login = () => {
         </label>
       </form>
       <div className="Login-button-container">
-        <NavLink to="/login" className="button" onClick={handleSubmit}>
+        <NavLink to="/login" className="btn" onClick={handleSubmit}>
           Login
         </NavLink>
         <p className="Login-p">or</p>
-        <NavLink to="/register-account" className="button">
+        <NavLink to="/register-account" className="btn">
           Create Account
         </NavLink>
       </div>
